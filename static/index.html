@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD TubeDownloader</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1 class="gradient-text">HD TubeDownloader</h1>
+            <p>Download your favorite videos in High Definition or MP3.</p>
+        </header>
+
+        <section class="input-section glass-panel">
+            <form id="download-form">
+                <input type="url" id="youtube-url" placeholder="Paste YouTube link here..." required>
+                <button type="submit" id="fetch-btn">
+                    <span>Fetch</span>
+                    <div class="loader hidden" id="fetch-loader"></div>
+                </button>
+            </form>
+            <div id="error-message" class="hidden"></div>
+        </section>
+
+        <section id="results-section" class="hidden">
+            <div class="glass-panel video-info-panel">
+                <div class="thumbnail-wrapper">
+                    <img id="video-thumbnail" src="" alt="Video Thumbnail">
+                    <span id="video-duration" class="duration-badge"></span>
+                </div>
+                <div class="video-details">
+                    <h2 id="video-title"></h2>
+                    
+                    <div class="download-options">
+                        <div class="option-group">
+                            <h3>Download Video</h3>
+                            <div class="select-wrapper">
+                                <select id="video-quality" class="styled-select">
+                                    <option value="" disabled selected>Select Quality</option>
+                                </select>
+                            </div>
+                            <button id="download-video-btn" class="action-btn primary-btn">
+                                Download Video <div class="loader hidden" id="dl-video-loader"></div>
+                            </button>
+                        </div>
+                        
+                        <div class="divider"></div>
+
+                        <div class="option-group">
+                            <h3>Download Audio (MP3)</h3>
+                            <button id="download-audio-btn" class="action-btn secondary-btn">
+                                Download MP3 <div class="loader hidden" id="dl-audio-loader"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+    <script src="/static/script.js?v=2"></script>
+</body>
+</html>
